@@ -1,0 +1,11 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
+
+<FilesMatch "^\.env|database\.sql|composer\.(json|lock)">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+Options -Indexes
